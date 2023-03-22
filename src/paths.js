@@ -24,76 +24,80 @@ export const paths = {
       resetPassword: '/auth/amplify/reset-password'
     }
   },
-  authDemo: {
-    forgotPassword: {
-      classic: '/auth-demo/forgot-password/classic',
-      modern: '/auth-demo/forgot-password/modern'
-    },
-    login: {
-      classic: '/auth-demo/login/classic',
-      modern: '/auth-demo/login/modern'
-    },
-    register: {
-      classic: '/auth-demo/register/classic',
-      modern: '/auth-demo/register/modern'
-    },
-    resetPassword: {
-      classic: '/auth-demo/reset-password/classic',
-      modern: '/auth-demo/reset-password/modern'
-    },
-    verifyCode: {
-      classic: '/auth-demo/verify-code/classic',
-      modern: '/auth-demo/verify-code/modern'
-    }
-  },
+  // authDemo: {
+  //   forgotPassword: {
+  //     classic: '/auth-demo/forgot-password/classic',
+  //     modern: '/auth-demo/forgot-password/modern'
+  //   },
+  //   login: {
+  //     classic: '/auth-demo/login/classic',
+  //     modern: '/auth-demo/login/modern'
+  //   },
+  //   register: {
+  //     classic: '/auth-demo/register/classic',
+  //     modern: '/auth-demo/register/modern'
+  //   },
+  //   resetPassword: {
+  //     classic: '/auth-demo/reset-password/classic',
+  //     modern: '/auth-demo/reset-password/modern'
+  //   },
+  //   verifyCode: {
+  //     classic: '/auth-demo/verify-code/classic',
+  //     modern: '/auth-demo/verify-code/modern'
+  //   }
+  // },
   dashboard: {
     index: '/dashboard',
-    academy: {
-      index: '/dashboard/academy',
-      courseDetails: '/dashboard/academy/courses/:courseId'
-    },
+    // academy: {
+    //   index: '/dashboard/academy',
+    //   courseDetails: '/dashboard/academy/courses/:courseId'
+    // },
     account: '/dashboard/account',
-    analytics: '/dashboard/analytics',
-    blank: '/dashboard/blank',
+    // analytics: '/dashboard/analytics',
+    // blank: '/dashboard/blank',
     blog: {
       index: '/dashboard/blog',
       postDetails: '/dashboard/blog/:postId',
       postCreate: '/dashboard/blog/create'
     },
     calendar: '/dashboard/calendar',
-    chat: '/dashboard/chat',
-    crypto: '/dashboard/crypto',
-    customers: {
-      index: '/dashboard/customers',
-      details: '/dashboard/customers/:customerId',
-      edit: '/dashboard/customers/:customerId/edit'
-    },
+    // chat: '/dashboard/chat',
+    // crypto: '/dashboard/crypto',
+    // customers: {
+    //   index: '/dashboard/customers',
+    //   details: '/dashboard/customers/:customerId',
+    //   edit: '/dashboard/customers/:customerId/edit'
+    // },
     ecommerce: '/dashboard/ecommerce',
-    fileManager: '/dashboard/file-manager',
+    // fileManager: '/dashboard/file-manager',
     invoices: {
       index: '/dashboard/invoices',
       details: '/dashboard/invoices/:orderId'
     },
-    jobs: {
-      index: '/dashboard/jobs',
-      create: '/dashboard/jobs/create',
-      companies: {
-        details: '/dashboard/jobs/companies/:companyId'
-      }
-    },
-    kanban: '/dashboard/kanban',
-    logistics: {
-      index: '/dashboard/logistics',
-      fleet: '/dashboard/logistics/fleet'
-    },
-    mail: '/dashboard/mail',
-    orders: {
-      index: '/dashboard/orders',
-      details: '/dashboard/orders/:orderId'
-    },
+    // jobs: {
+    //   index: '/dashboard/jobs',
+    //   create: '/dashboard/jobs/create',
+    //   companies: {
+    //     details: '/dashboard/jobs/companies/:companyId'
+    //   }
+    // },
+    // kanban: '/dashboard/kanban',
+    // logistics: {
+    //   index: '/dashboard/logistics',
+    //   fleet: '/dashboard/logistics/fleet'
+    // },
+    // mail: '/dashboard/mail',
+    // orders: {
+    //   index: '/dashboard/orders',
+    //   details: '/dashboard/orders/:orderId'
+    // },
     products: {
       index: '/dashboard/products',
       create: '/dashboard/products/create'
+    },
+    users: {
+      index: '/dashboard/user',
+      create: '/dashboard/user/create'
     },
     social: {
       index: '/dashboard/social',
@@ -120,7 +124,7 @@ export const paths = {
     colors: '/components/colors',
     inputs: '/components/inputs'
   },
-  docs: 'https://material-kit-pro-react-docs.devias.io',
+  // docs: 'https://material-kit-pro-react-docs.devias.io',
   401: '/401',
   404: '/404',
   500: '/500'

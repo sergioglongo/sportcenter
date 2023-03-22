@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import toast from 'react-hot-toast';
 import CreditCard01Icon from '@untitled-ui/icons-react/build/esm/CreditCard01';
 import Settings04Icon from '@untitled-ui/icons-react/build/esm/Settings04';
-import User03Icon from '@untitled-ui/icons-react/build/esm/User03';
+// import User03Icon from '@untitled-ui/icons-react/build/esm/User03';
 import {
   Box,
   Button,
@@ -58,7 +58,7 @@ export const AccountPopover = (props) => {
         }
       }
 
-      router.push(paths.index);
+      router.push(paths.auth.jwt.login);
     } catch (err) {
       console.error(err);
       toast.error('Something went wrong!');
@@ -90,7 +90,7 @@ export const AccountPopover = (props) => {
       </Box>
       <Divider />
       <Box sx={{ p: 1 }}>
-        <ListItemButton
+        {/* <ListItemButton
           component={RouterLink}
           href={paths.dashboard.social.profile}
           onClick={onClose}
@@ -112,7 +112,7 @@ export const AccountPopover = (props) => {
               </Typography>
             )}
           />
-        </ListItemButton>
+        </ListItemButton> */}
         <ListItemButton
           component={RouterLink}
           href={paths.dashboard.account}

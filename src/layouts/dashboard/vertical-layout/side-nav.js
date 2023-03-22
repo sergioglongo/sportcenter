@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import PropTypes from 'prop-types';
-import File04Icon from '@untitled-ui/icons-react/build/esm/File04';
-import { Box, Button, Drawer, Stack, SvgIcon, Typography } from '@mui/material';
+// import File04Icon from '@untitled-ui/icons-react/build/esm/File04';
+import { Box, Drawer, Stack, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { Logo } from 'src/components/logo';
 import { RouterLink } from 'src/components/router-link';
@@ -218,9 +218,9 @@ export const SideNav = (props) => {
           </Stack>
           <Box sx={{ p: 3 }}>
             <Typography variant="subtitle1">
-              Need help?
+              Pie de side-nav
             </Typography>
-            <Typography
+            {/* <Typography
               color="neutral.400"
               sx={{ mb: 2 }}
               variant="body2"
@@ -240,7 +240,7 @@ export const SideNav = (props) => {
               variant="contained"
             >
               Documentation
-            </Button>
+            </Button> */}
           </Box>
         </Stack>
       </Scrollbar>

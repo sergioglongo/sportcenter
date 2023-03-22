@@ -1,7 +1,7 @@
 import { tokens } from '../tokens';
 
 export const es = {
-  [tokens.common.languageChanged]: 'Se ha cambiado el idioma',
+  [tokens.common.languageChanged]: 'Se cambio el idioma',
   [tokens.nav.academy]: 'Academia',
   [tokens.nav.account]: 'Cuenta',
   [tokens.nav.analytics]: 'Analítica',
@@ -17,7 +17,7 @@ export const es = {
   [tokens.nav.create]: 'Crear',
   [tokens.nav.crypto]: 'Crypto',
   [tokens.nav.customers]: 'Clientes',
-  [tokens.nav.dashboard]: 'Dashboard',
+  [tokens.nav.dashboard]: 'Tablero',
   [tokens.nav.details]: 'Detalles',
   [tokens.nav.ecommerce]: 'E-Commerce',
   [tokens.nav.edit]: 'Editar',
@@ -36,13 +36,14 @@ export const es = {
   [tokens.nav.mail]: 'Correo',
   [tokens.nav.management]: 'Gestión',
   [tokens.nav.orderList]: 'Pedidos',
-  [tokens.nav.overview]: 'Visión general',
+  [tokens.nav.overview]: 'Panel General',
   [tokens.nav.pages]: 'Páginas',
   [tokens.nav.postCreate]: 'Crear Articulo',
   [tokens.nav.postDetails]: 'Detalles del Articulo',
   [tokens.nav.postList]: 'Lista de Articulos',
   [tokens.nav.pricing]: 'Precios',
   [tokens.nav.productList]: 'Productos',
+  [tokens.nav.userList]: 'Usuarios',
   [tokens.nav.profile]: 'Perfil',
   [tokens.nav.register]: 'Registrarse',
   [tokens.nav.resetPassword]: 'Restablecer Contraseña',
