@@ -58,7 +58,7 @@ const categoryOptions = [
   }
 ];
 
-export const ProductListTable = (props) => {
+export const UserListTable = (props) => {
   const {
     count = 0,
     items = [],
@@ -481,7 +481,7 @@ export const ProductListTable = (props) => {
   );
 };
 
-ProductListTable.propTypes = {
+UserListTable.propTypes = {
   count: PropTypes.number,
   items: PropTypes.array,
   onPageChange: PropTypes.func,

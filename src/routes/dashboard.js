@@ -18,9 +18,9 @@ const IndexPage = lazy(() => import('src/pages/dashboard/index'));
 // const CustomerDetailPage = lazy(() => import('src/pages/dashboard/customers/detail'));
 // const CustomerEditPage = lazy(() => import('src/pages/dashboard/customers/edit'));
 
-// // Invoice
-// const InvoiceListPage = lazy(() => import('src/pages/dashboard/invoices/list'));
-// const InvoiceDetailPage = lazy(() => import('src/pages/dashboard/invoices/detail'));
+// Invoice
+const InvoiceListPage = lazy(() => import('src/pages/dashboard/invoices/list'));
+const InvoiceDetailPage = lazy(() => import('src/pages/dashboard/invoices/detail'));
 
 // // Jobs
 // const JobBrowsePage = lazy(() => import('src/pages/dashboard/jobs/browse'));
@@ -126,19 +126,19 @@ export const dashboardRoutes = [
       //     }
       //   ]
       // },
-      // {
-      //   path: 'invoices',
-      //   children: [
-      //     {
-      //       index: true,
-      //       element: <InvoiceListPage />
-      //     },
-      //     {
-      //       path: ':invoiceId',
-      //       element: <InvoiceDetailPage />
-      //     }
-      //   ]
-      // },
+      {
+        path: 'invoices',
+        children: [
+          {
+            index: true,
+            element: <InvoiceListPage />
+          },
+          {
+            path: ':invoiceId',
+            element: <InvoiceDetailPage />
+          }
+        ]
+      },
       // {
       //   path: 'jobs',
       //   children: [

@@ -11,17 +11,17 @@ import {
   SvgIcon,
   Typography
 } from '@mui/material';
-import { productsApi } from 'src/api/products';
+import { UsersApi } from 'src/api/users';
 import { BreadcrumbsSeparator } from 'src/components/breadcrumbs-separator';
 import { RouterLink } from 'src/components/router-link';
 import { Seo } from 'src/components/seo';
 import { useMounted } from 'src/hooks/use-mounted';
 import { usePageView } from 'src/hooks/use-page-view';
 import { paths } from 'src/paths';
-import { ProductListSearch } from 'src/sections/dashboard/product/product-list-search';
-import { ProductListTable } from 'src/sections/dashboard/product/product-list-table';
+import { UserListSearch } from 'src/sections/dashboard/user/user-list-search';
+import { UserListTable } from 'src/sections/dashboard/user/user-list-table';
 
-const useProductsSearch = () => {
+const useUsersSearch = () => {
   const [state, setState] = useState({
     filters: {
       name: undefined,
@@ -62,21 +62,21 @@ const useProductsSearch = () => {
   };
 };
 
-const useProductsStore = (searchState) => {
+const useUsersStore = (searchState) => {
   const isMounted = useMounted();
   const [state, setState] = useState({
-    products: [],
-    productsCount: 0
+    users: [],
+    usersCount: 0
   });
 
-  const handleProductsGet = useCallback(async () => {
+  const handleUsersGet = useCallback(async () => {
     try {
-      const response = await productsApi.getProducts(searchState);
+      const response = await UsersApi(searchState);
 
       if (isMounted()) {
         setState({
-          products: response.data,
-          productsCount: response.count
+          users: response.data,
+          usersCount: response.count
         });
       }
     } catch (err) {
@@ -85,7 +85,7 @@ const useProductsStore = (searchState) => {
   }, [searchState, isMounted]);
 
   useEffect(() => {
-      handleProductsGet();
+      handleUsersGet();
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [searchState]);
@@ -96,14 +96,14 @@ const useProductsStore = (searchState) => {
 };
 
 const Page = () => {
-  const productsSearch = useProductsSearch();
-  const productsStore = useProductsStore(productsSearch.state);
+  const usersSearch = useUsersSearch();
+  const usersStore = useUsersStore(usersSearch.state);
 
   usePageView();
 
   return (
     <>
-      <Seo title="Dashboard: Product List" />
+      <Seo title="Dashboard: Users List" />
       <Box
         component="main"
         sx={{
@@ -120,7 +120,7 @@ const Page = () => {
             >
               <Stack spacing={1}>
                 <Typography variant="h4">
-                  Products
+                  Usuarios
                 </Typography>
                 <Breadcrumbs separator={<BreadcrumbsSeparator />}>
                   <Link
@@ -129,21 +129,21 @@ const Page = () => {
                     href={paths.dashboard.index}
                     variant="subtitle2"
                   >
-                    Dashboard
+                    Tablero Principal
                   </Link>
                   <Link
                     color="text.primary"
                     component={RouterLink}
-                    href={paths.dashboard.products.index}
+                    href={paths.dashboard.users.index}
                     variant="subtitle2"
                   >
-                    Products
+                    Usuarios
                   </Link>
                   <Typography
                     color="text.secondary"
                     variant="subtitle2"
                   >
-                    List
+                    Lista
                   </Typography>
                 </Breadcrumbs>
               </Stack>
@@ -154,7 +154,7 @@ const Page = () => {
               >
                 <Button
                   component={RouterLink}
-                  href={paths.dashboard.products.create}
+                  href={paths.dashboard.users.create}
                   startIcon={(
                     <SvgIcon>
                       <PlusIcon />
@@ -162,19 +162,19 @@ const Page = () => {
                   )}
                   variant="contained"
                 >
-                  Add
+                  Crear
                 </Button>
               </Stack>
             </Stack>
             <Card>
-              <ProductListSearch onFiltersChange={productsSearch.handleFiltersChange} />
-              <ProductListTable
-                onPageChange={productsSearch.handlePageChange}
-                onRowsPerPageChange={productsSearch.handleRowsPerPageChange}
-                page={productsSearch.state.page}
-                items={productsStore.products}
-                count={productsStore.productsCount}
-                rowsPerPage={productsSearch.state.rowsPerPage}
+              <UserListSearch onFiltersChange={usersSearch.handleFiltersChange} />
+              <UserListTable
+                onPageChange={usersSearch.handlePageChange}
+                onRowsPerPageChange={usersSearch.handleRowsPerPageChange}
+                page={usersSearch.state.page}
+                items={usersStore.users}
+                count={usersStore.usersCount}
+                rowsPerPage={usersSearch.state.rowsPerPage}
               />
             </Card>
           </Stack>

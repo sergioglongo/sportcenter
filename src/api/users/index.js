@@ -1,65 +1,60 @@
 import { applyPagination } from 'src/utils/apply-pagination';
-import { deepCopy } from 'src/utils/deep-copy';
-import { products } from './data';
+import { useGetAllUsersQuery } from './apiUser';
 
-class ProductsApi {
-  getProducts(request = {}) {
-    const { filters, page, rowsPerPage } = request;
+export const UsersApi = (request = {}) => {
+  const { filters, page, rowsPerPage } = request;
+  const { data: users, isSuccess: isSuccessUsers, isError: IsErrorUsers, error: errorUsers } = useGetAllUsersQuery()
+  let data = {}
+  let count = 0
 
-    let data = deepCopy(products);
-    let count = data.length;
+  if (isSuccessUsers && users?.success) {
+    data = users.result
+    count = users.totalUsers
 
     if (typeof filters !== 'undefined') {
-      data = data.filter((product) => {
-        if (typeof filters.name !== 'undefined' && filters.name !== '') {
-          const nameMatched = product.name.toLowerCase().includes(filters.name.toLowerCase());
+      const dataFiltered = data?.result.filter((user) => {
+        if (typeof filters.user !== 'undefined' && filters.user !== '') {
+          const nameMatched = user.user.toLowerCase().includes(filters.user.toLowerCase());
 
           if (!nameMatched) {
             return false;
           }
         }
 
-        // It is possible to select multiple category options
-        if (typeof filters.category !== 'undefined' && filters.category.length > 0) {
-          const categoryMatched = filters.category.includes(product.category);
+        // It is possible to select multiple type options
+        if (typeof filters.type !== 'undefined' && filters.type.length > 0) {
+          const typeMatched = filters.type.includes(user.type);
 
-          if (!categoryMatched) {
+          if (!typeMatched) {
             return false;
           }
         }
 
         // It is possible to select multiple status options
         if (typeof filters.status !== 'undefined' && filters.status.length > 0) {
-          const statusMatched = filters.status.includes(product.status);
+          const statusMatched = filters.status.includes(user.status);
 
           if (!statusMatched) {
             return false;
           }
         }
 
-        // Present only if filter required
-        if (typeof filters.inStock !== 'undefined') {
-          const stockMatched = product.inStock === filters.inStock;
-
-          if (!stockMatched) {
-            return false;
-          }
-        }
-
         return true;
       });
-      count = data.length;
+      count = dataFiltered.length
     }
 
     if (typeof page !== 'undefined' && typeof rowsPerPage !== 'undefined') {
       data = applyPagination(data, page, rowsPerPage);
     }
-
-    return Promise.resolve({
-      data,
-      count
-    });
   }
-}
 
-export const productsApi = new ProductsApi();
+  if (IsErrorUsers) {
+    console.log("Error al obtener usuarios", errorUsers);
+  }
+
+  return Promise.resolve({
+    data,
+    count
+  });
+}

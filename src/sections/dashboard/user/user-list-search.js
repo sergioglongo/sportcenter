@@ -58,7 +58,7 @@ const stockOptions = [
   }
 ];
 
-export const ProductListSearch = (props) => {
+export const UserListSearch = (props) => {
   const { onFiltersChange, ...other } = props;
   const queryRef = useRef(null);
   const [query, setQuery] = useState('');
@@ -361,6 +361,6 @@ export const ProductListSearch = (props) => {
   );
 };
 
-ProductListSearch.propTypes = {
+UserListSearch.propTypes = {
   onFiltersChange: PropTypes.func
 };
