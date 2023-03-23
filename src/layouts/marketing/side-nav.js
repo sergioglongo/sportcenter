@@ -20,22 +20,6 @@ const items = [
           {
             title: 'Overview',
             path: paths.dashboard.index
-          },
-          {
-            title: 'Customers',
-            path: paths.dashboard.customers.index
-          },
-          {
-            title: 'Logistics',
-            path: paths.dashboard.logistics.index
-          },
-          {
-            title: 'File Manager',
-            path: paths.dashboard.fileManager
-          },
-          {
-            title: 'Academy',
-            path: paths.dashboard.academy.index
           }
         ]
       },

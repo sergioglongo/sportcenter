@@ -43,6 +43,7 @@ export const de = {
   [tokens.nav.postList]: 'Beitragsliste',
   [tokens.nav.pricing]: 'Preisgestaltung',
   [tokens.nav.productList]: 'Produkte',
+  [tokens.nav.userList]: 'Users',
   [tokens.nav.profile]: 'Profil',
   [tokens.nav.register]: 'Registrieren',
   [tokens.nav.resetPassword]: 'Passwort Zurücksetzen',
